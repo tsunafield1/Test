@@ -2,25 +2,47 @@
 #include <stdio.h>
 int main()
 {
-    int n,sum;
+    int n;
     scanf("%d", &n);
-    printf("%d ",n);
-    while (n > 10)
+    int i = 1;
+    while (i <= n - 1)
     {
-        sum = 0;
-        int m = 10;
-        while (n / m > 0)
+        for (int j = 1; j <= i; j++)
         {
-            m *= 10;
+            printf("*");
         }
-        m /= 10;
-        while (m >= 1)
+        for (int j = 1; j <= (n * 2) - ((i * 2) + 1); j++)
         {
-            sum += n / m;
-            n %= m;
-            m /= 10;
+            printf(" ");
         }
-        n = sum;
-        printf("-> %d", sum);
+        for (int j = 1; j <= i; j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+        i++;
+    }
+    for (int j = 1; j <= (n * 2) - 1; j++)
+    {
+        printf("*");
+    }
+    printf("\n");
+    i++;
+    while (i <= (n * 2) - 1)
+    {
+        for (int j = 1; j <= (n * 2) - i; j++)
+        {
+            printf("*");
+        }
+        for (int j = 1; j <= ((i - n) * 2) - 1; j++)
+        {
+            printf(" ");
+        }
+        for (int j = 1; j <= (n * 2) - i; j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+        i++;
     }
 }
